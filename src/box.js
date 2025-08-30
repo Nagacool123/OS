@@ -1,5 +1,5 @@
 import { Rnd } from "react-rnd";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import closeImg from "./assets/buttons/close.svg";
 import closeActive from "./assets/buttons/close-active.svg";
 import closeHover from "./assets/buttons/close-hover.svg";
@@ -71,7 +71,7 @@ function DraggableResizableBox({
           e.stopPropagation();
         }}
         onDragStop={(e, d, ref) => {
-          if (isMaximize == false) {
+          if (isMaximize === false) {
             setPosition({ x: d.x, y: d.y });
           }
         }}

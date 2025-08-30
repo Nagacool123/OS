@@ -1,10 +1,9 @@
 import "./App.css";
-import React, { useState, useEffect, act } from "react";
+import { useState, useEffect } from "react";
 
 import DraggableResizableBox from "./box";
 import Info from "./info.js";
 import Pokedex from "./pokedex.js";
-import { tab } from "@testing-library/user-event/dist/tab";
 
 function App() {
   const [openedTabs, setOpenedTabs] = useState([1]);

@@ -1,5 +1,4 @@
 import "./App.css";
-import React, { useState, useEffect, act } from "react";
 
 function Pokedex({ click, active }) {
   return (
@@ -12,7 +11,7 @@ function Pokedex({ click, active }) {
           width: "100%",
           height: "100%",
           zIndex: 10,
-          pointerEvents: active == 2 ? "none" : "auto",
+          pointerEvents: active === 2 ? "none" : "auto",
         }}
         onClick={() => click(2)}
       ></div>

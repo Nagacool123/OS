@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import fuel from "./assets/projects_pics/fuel.PNG";
 import poke from "./assets/projects_pics/pokeimg.PNG";
 import OS from "./assets/projects_pics/portfolioOS.PNG";
@@ -115,7 +115,9 @@ function Info() {
           <p className="tech">
             Technologies: React, Javascript, Tailwind CSS, APIs, Git, Node.
           </p>
-          <a>Link</a>
+          <a href="https://github.com/Nagacool123" target="_self">
+            Link
+          </a>
         </div>
         <div className="project_container">
           <h1 className="title">Fuel Quote Form</h1>
@@ -127,7 +129,9 @@ function Info() {
           <p className="tech">
             Technologies: Javascript, React, Tailwind CSS, MySQL, Git.
           </p>
-          <a>Link</a>
+          <a href="https://github.com/Nagacool123" target="_self">
+            Link
+          </a>
         </div>
         <div className="project_container">
           <h1 className="title">3d Portfolio</h1>
@@ -138,7 +142,9 @@ function Info() {
           <p className="tech">
             Technologies: Three.js, Vite, Javascript, HTML, CSS
           </p>
-          <a>Link</a>
+          <a href="https://github.com/Nagacool123" target="_self">
+            Link
+          </a>
         </div>
         <div className="project_container">
           <h1 className="title">Portfolio OS</h1>
@@ -150,7 +156,9 @@ function Info() {
           <p className="tech">
             Technologies: React, Javascript, Node, Tailwind CSS
           </p>
-          <a>Link</a>
+          <a href="https://github.com/Nagacool123" target="_self">
+            Link
+          </a>
         </div>
       </div>
     );
@@ -160,13 +168,10 @@ function Info() {
       <div className="contacts">
         <h1>Contacts</h1>
         <div className="contacts_list flex flex-col">
-          <a href="https://github.com/Nagacool123" target="_blank">
+          <a href="https://github.com/Nagacool123" target="_self">
             GitHub
           </a>
-          <a
-            href="https://linkedin.com/in/hung-trinh-9866b4271"
-            target="_blank"
-          >
+          <a href="https://linkedin.com/in/hung-trinh-9866b4271" target="_self">
             LinkedIn
           </a>
           <p>trinhhung544@gmail.com</p>

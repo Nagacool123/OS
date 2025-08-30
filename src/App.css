@@ -1,38 +1,470 @@
+@tailwind base;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'CustomerFont';
+  src: url('zig_____.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MSS';
+  src: url('MSSansSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#root {
+  height: 100%;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./pics/windowback.jpg');
+  background-size: cover; /* Cover the entire element */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image tiling */
+  height: 100%;
+
+}
+
+.box {
+  background-color: whitesmoke;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+.drag-handle {
+  background-color: transparent;
+  color: white;
+  padding: 5px;
+  cursor: move;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.drag-handle p {
+  color: white;
+  justify-self: start;
+  font-family: 'CustomerFont', sans-serif;
+  font-size: 13px;
+}
+
+.drag-handle img {
+  width: 22px;
+  height: 22px;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  background-image: linear-gradient(rgb(9, 151, 255), rgb(0, 83, 238) 8%, rgb(0, 80, 238) 40%, rgb(0, 102, 255) 88%, rgb(0, 102, 255) 93%, rgb(0, 91, 255) 95%, rgb(0, 61, 215) 96%, rgb(0, 61, 215));
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  height: 29px;
+  border-top: 1px solid #0831d9;
+  border-left: 1px solid #0831d9;
+  border-right: 1px solid #001ea0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 7px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  margin-right: 3px;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.closeButton {
+  width: 24px;
+  height: 24px;
+  cursor: default;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+.mini-max {
+  width: 24px;
+  height: 24px;
+  cursor: default;
+}
+
+
+
+.react-draggable {
+  width: 1500px;
+}
+
+.container {
+  height: 100%;
+}
+
+
+
+.area {
+  height: 96.5vh;
+}
+
+.icon {
+  position: relative;
+  padding: 5px;
+  color: white;
+  top: 5px;
+}
+
+.icon2 {
+  position: relative;
+  padding: 5px;
+  color: white;
+  top: 20px;
+}
+
+.icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  width: 84px;
+  height: 66px;
+}
+.icon-container p {
+  color: white;
+  font-family: 'MSS', sans-serif;
+  font-size: 13px;
+}
+.icon-container img {
+  width: 48px;
+  height: 48px;
+}
+
+
+.taskBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(rgb(9, 151, 255), rgb(0, 83, 238) 8%, rgb(0, 80, 238) 40%, rgb(0, 102, 255) 88%, rgb(0, 102, 255) 93%, rgb(0, 91, 255) 95%, rgb(0, 61, 215) 96%, rgb(0, 61, 215));
+  height: 3.5vh;
+  gap: 0px;
+  font-family: 'MSS', sans-serif;
+  font-size: 15px;
+}
+
+.taskBar img {
+  height: 100%;
+}
+
+.time {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100%;
+  width: 100px;
+  background-image: linear-gradient(rgb(9, 151, 255), rgb(0, 83, 238) 8%, rgb(0, 80, 238) 40%, rgb(0, 102, 255) 88%, rgb(0, 102, 255) 93%, rgb(0, 91, 255) 95%, rgb(0, 61, 215) 96%, rgb(0, 61, 215));
+  margin-left: auto;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.startTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 130px;
+  height: 100%;
+  background-color: green;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabs {
+  display: flex;
+  width: 200px;
+  height: 37px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 4px;
+  background: #55a0ff url('./pics/open_button.png') no-repeat 0 -11px;
+  color: white;
 }
+
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+}
+
+.tabs-container img {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}
+
+.tabs-name {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+
+.active-tab {
+  background: #55a0ff url('./pics/open_button.png') no-repeat 0 -113px;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: calc(100% - 29px);
+  background-color: white;
+  box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda, inset 3px 3px #0855dd;
+  padding: 0 0 3px;
+  background: #ece9d8;
+  font-family: 'CustomerFont', sans-serif;
+}
+
+
+/* Show only the bottom-right resize handle */
+.bottomr {
+  display: block !important;
+  bottom: 1px !important;
+  right: 1px !important;
+  width: 10px !important; /* Adjust size as needed */
+  height: 10px !important; /* Adjust size as needed */
+  background-color: transparent;
+  cursor: nwse-resize; /* Cursor style for resizing */
+}
+.bottoml {
+  display: block !important;
+  bottom: 1px !important;
+  left: 1px !important;
+  width: 10px !important; /* Adjust size as needed */
+  height: 10px !important; /* Adjust size as needed */
+  background-color: transparent;
+  cursor: nwse-resize; /* Cursor style for resizing */
+}
+
+.topl {
+  display: block !important;
+  top: 1px !important;
+  left: 1px !important;
+  width: 10px !important; /* Adjust size as needed */
+  height: 10px !important; /* Adjust size as needed */
+  background-color: transparent;
+  cursor: nwse-resize; /* Cursor style for resizing */
+}
+
+.topr {
+  display: block !important;
+  top: 1px !important;
+  right: 1px !important;
+  width: 5px !important; /* Adjust size as needed */
+  height: 5px !important; /* Adjust size as needed */
+  background-color: transparent;
+  cursor: nwse-resize; /* Cursor style for resizing */
+}
+
+.top {
+  display: none;
+}
+.right {
+  display: none;
+}
+.bottom {
+  display: none;
+}
+.left {
+  display: none;
+}
+
+
+.info_container {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  width: 100%;
+  height: calc(100% - 3px);
+  padding: 10px;
+  gap: 10px;
+
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 2px;
+  overflow-y: auto;
+}
+
+/* Customize scrollbar track */
+.info_container::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Customize the thumb (the draggable part) */
+.info_container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar */
+  border-radius: 10px; /* Roundness of the scrollbar */
+  border: 2px solid transparent; /* To create padding around thumb */
+}
+
+/* Customize scrollbar track (background) */
+.info_container::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Background of the track */
+  border-radius: 10px;
+}
+
+/* For Firefox (with scrollbar-color and scrollbar-width) */
+.info_container {
+  scrollbar-width: thin; /* Makes scrollbar thinner */
+  scrollbar-color: gray transparent; /* thumb color and track background */
+}
+
+
+.nav {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 100px;
+  border: 2px solid black;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  overflow-y: auto; /* Ensure the scrollbar is visible */
+}
+
+
+
+.project_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.project_container img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid black;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.title {
+  font-size:xx-large;
+  text-decoration: underline;
+}
+
+.tech {
+  color: #001ea0;
+}
+
+.pokedex_container {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  width: 100%;
+  height: calc(100% - 3px);
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 2px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.contacts h1{
+  font-size: xx-large;
+  text-decoration: underline;
+}
+.contacts a, p {
+  color:#001ea0;
+  font-size: larger;
+}
+
+
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px
+}
+
+.lang img {
+  width: 40px;
+}
+
+.pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: solid 1px gray;
+  border-radius: 3px;
+  background-color: transparent; /* Default background */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.pics:hover {
+  background-image: linear-gradient(rgb(9, 151, 255), rgb(0, 83, 238) 8%, rgb(0, 80, 238) 40%, rgb(0, 102, 255) 88%, rgb(0, 102, 255) 93%, rgb(0, 91, 255) 95%, rgb(0, 61, 215) 96%, rgb(0, 61, 215));
+  border: solid 0px black;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+TO DO:
+***organize code, combine or get rid of unnecessary variables and function***
+
+organize folder like pictures
+
+add design to boxes and make things look more presentable
+
+*revise and edit about and projects and maybe contacts*
+
+take picture of projects
+
+add more stuff to task bar, time, date, etc
+
+think of something to add to experience or remove it
+*/
+
+
+
